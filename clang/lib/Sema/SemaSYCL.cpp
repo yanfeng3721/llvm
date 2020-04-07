@@ -815,6 +815,7 @@ static CompoundStmt *CreateOpenCLKernelBody(Sema &S,
                                  InitMethodName, BodyStmts);
       } else if (Util::isSyclSpecConstantType(FieldType)) {
         // Just skip specialization constants - not part of signature.
+        continue;
       } else if (CRD || FieldType->isScalarType()) {
         // If field has built-in or a structure/class type just initialize
         // this field with corresponding kernel argument using copy
